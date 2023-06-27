@@ -40,7 +40,7 @@ jobs:
       - name: Lint
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          ruff . --select=E9,F63,F7,F82 --show-source --statistics
+          ruff . --select=E9,F63,F7,F82 --show-source
           # exit-zero treats all errors as warnings. The GitHub web ui editor is 127 chars wide
           SELECT=C,E10,E11,E401,E502,E703,E8,E9,F,W191,W291,W292,W293,W391
           ruff . --exit-zero --select=${SELECT} --line-length=127 --statistics
@@ -64,9 +64,9 @@ jobs:
         run: |
           if [ "${{ matrix.python-version }}" = "2.7" ] || [ "${{ matrix.python-version }}" = "3.5" ]
           then
-            # do nothing
+            ruff --ignore='E203,E501,E741' --show-source dialects/v10/python2/*.py dialects/v20/python2/*.py --
           else
-            ruff --ignore='E203,E501,E741' --statistics dialects/
+            ruff --ignore='E203,E501,E741' --show-source dialects/
             mypy --config-file ./.github/workflows/mypy-generated.ini dialects/v10/*.py dialects/v20/*.py
           fi
 
