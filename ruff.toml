@@ -1,3 +1,1 @@
 line-length = 127
-select = ["E9", "F63", "F7", "F82"]
-mccabe.max-complexity = 10
