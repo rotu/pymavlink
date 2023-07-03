@@ -41,9 +41,9 @@ jobs:
 
       - name: Install pymavlink
         run: |
-          pip install $EDITABLE_FLAG .
+          pip install $ARGS .
         env:
-          EDITABLE_FLAG: matrix.editable && '-e' || ''
+          ARGS: ${{ matrix.editable && '-e' || '' }}
           
       - name: Lint with flake8
         run: |
