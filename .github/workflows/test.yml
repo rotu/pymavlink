@@ -43,13 +43,16 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install dependencies with apt
         if: matrix.deps=='apt'
         run: |
           sudo apt update
           sudo apt install flake8 mypy python3-pytest python3-numpy
           sudo apt install python3-lxml python3-future
-          
+      - run: |
+          env
+          python -m site
       - name: Install dependencies with pip
         if: matrix.deps=='pip'
         run: |
