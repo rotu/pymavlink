@@ -19,8 +19,8 @@ home = os.getenv('HOME')
 if home is not None:
     extra = os.path.join(home, '.pymavlink', 'mavextra.py')
     if os.path.exists(extra):
-        import imp
-        mavuser = imp.load_source('pymavlink.mavuser', extra)
+        from importlib.machinery import SourceFileLoader
+        mavuser =  SourceFileLoader('pymavlink.mavuser', extra).load_module()
         from pymavlink.mavuser import *
 
 def evaluate_expression(expression, vars, nocondition=False):

@@ -157,6 +157,7 @@ setup (name = 'pymavlink',
        install_requires=[
             'future',
             'lxml',
+            'importlib_resources>=5.10'
        ],
        cmdclass={'build_py': custom_build_py},
        python_requires=">=3.6"
