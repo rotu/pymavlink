@@ -1,0 +1,4 @@
+AFS_ACTION       42
+PARAM1           34.450000
+PARAM2           0
+PARAM3           -13.400000
