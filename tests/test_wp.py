@@ -12,7 +12,8 @@ os.environ["MAVLINK20"] = "1"
 
 from pymavlink import mavwp
 from pymavlink import mavutil
-from importlib import resources
+import importlib_resources as resources
+
 class MAVWPTest(unittest.TestCase):
 
     """

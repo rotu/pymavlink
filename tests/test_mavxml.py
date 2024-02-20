@@ -5,7 +5,8 @@ Module to test MAVXML
 
 from __future__ import print_function
 import unittest
-from importlib import resources
+
+import importlib_resources as resources
 
 from pymavlink.generator.mavparse import MAVXML
 from pymavlink.generator.mavparse import MAVParseError
